@@ -12,7 +12,7 @@ OUTPUT_FILE = "troop_movements.csv"
 # Load home world data from JSON file
 with open("home_worlds.json") as json_file:
     home_worlds = json.load(json_file)
-
+resistance_units = ["x-wing", "resistance_soldier", "unknown"]
 # Generate data rows
 data_rows = []
 for i in range(1, NUM_ROWS + 1):
@@ -20,9 +20,12 @@ for i in range(1, NUM_ROWS + 1):
     timestamp = datetime.now() - timedelta(seconds=i)
     unit_id = i
     unit_type = random.choice(
-        ["stormtrooper", "tie_fighter", "at-st", "x-wing", "resistance_soldier", "at-at", "tie_silencer", "unknown"]
+        ["stormtrooper", "tie_fighter", "at-st", "x-wing", "resistance_soldier", "at-at", "tie_silencer", "unknown", "tauntaun"]
     )
-    empire_or_resistance = random.choice(["empire", "resistance"])
+    if unit_type in resistance_units:
+        empire_or_resistance = "resistance"
+    else:
+        empire_or_resistance = "empire"
     location_x = random.randint(1, 10)
     location_y = random.randint(1, 10)
     destination_x = random.randint(1, 10)
