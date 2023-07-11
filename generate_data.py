@@ -12,7 +12,7 @@ OUTPUT_FILE = "troop_movements.csv"
 # Load home world data from JSON file
 with open("home_worlds.json") as json_file:
     home_worlds = json.load(json_file)
-resistance_units = ["x-wing", "resistance_soldier", "unknown"]
+resistance_units = ["x-wing", "resistance_soldier", "unknown","tauntaun"]
 # Generate data rows
 data_rows = []
 for i in range(1, NUM_ROWS + 1):
