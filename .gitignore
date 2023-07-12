@@ -1,3 +1,4 @@
 ./troop_movements10m.csv
 .ipynb_checkpoints/
 /.ipynb_checkpoints
+./troop_movements10m.parquet
